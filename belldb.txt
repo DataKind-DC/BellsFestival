@@ -1,0 +1,30 @@
+CREATE TABLE BELL_TYPE(
+TYPE_ID int PRIMARY KEY,
+TYPE_DESC varchar(100) NOT NULL,
+IMG_URL varchar(10000) NOT NULL
+);
+CREATE TABLE TOWER_DESC(
+ID int PRIMARY KEY AUTO_INCREMENT,
+NAME varchar(100),
+TYPE_ID int,
+NUM_OF_BELLS int,
+CAST date,
+BELL_METAL varchar(10),
+WEIGHT varchar(20),
+SIZE varchar(10),
+FOUNDRY varchar(50) NOT NULL,
+INSCRIPTION varchar(100),
+RING_TIME varchar(100),
+STORY VARCHAR(100),
+LATITUDE DECIMAL(10, 8),
+LONGITUDE DECIMAL(11, 8),
+STREET varchar(20),
+CITY varchar(10),
+STATE varchar(10),
+ZIP varchar(10),
+FOREIGN KEY (TYPE_ID) REFERENCES BELL_TYPE(TYPE_ID)
+);
+insert into TOWER_DESC values('1','Alexandria', '1', '8', '1982-01-01', '10-3-4', ' ', ' ', 'Immanuel Chapel, Virginia Theological Seminary',' ',
+ 'Monday: 6:00-9:00',' ',
+'38.819807','-77.092509',' ', 'Alexandria','Virginia', ' ');
+insert into BELL_TYPE values('1', 'Carillon', 'https://uploads-ssl.webflow.com/5fa7463d08cb571a74d47572/5fac98601123e631b7ceef8f_Alexandria%20-%20750x1000%20-%20butler.jpg');
